@@ -3,6 +3,13 @@
   "version": "1.0.2",
   "description": "Convert a number to a representation in any base or in any custom alphabet",
   "main": "lib/index.js",
+  "keywords": [
+    "number",
+    "converter",
+    "alphabet",
+    "hexadecimal",
+    "binary"
+  ],
   "scripts": {
     "clean": "rimraf lib dist",
     "build": "babel index.js --out-dir lib",
