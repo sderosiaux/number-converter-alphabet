@@ -1,6 +1,6 @@
 {
   "name": "number-converter-alphabet",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Convert a number to a representation in any base or in any custom alphabet",
   "main": "lib/index.js",
   "scripts": {
