@@ -16,11 +16,43 @@ $ npm install --save number-converter-alphabet
 ## Usage
 
 ```js
-import convert, { ALPHABET_HEXADECIMAL } from 'number-converter-alphabet';
+import convert, { ALPHABET_HEXADECIMAL, ALPHABET_BINARY } from 'number-converter-alphabet';
 
-console.log(convert(65535, ALPHABET_HEXADECIMAL));
-// Output: FFFF
+console.log(convert(3735928559, ALPHABET_HEXADECIMAL));
+// Output: DEADBEEF
+console.log(convert(3735928559, ALPHABET_BINARY))
+// Output: 11011110101011011011111011101111
+console.log(convert(3735928559, '0123'))
+// Output: 3132223123323233
+
 console.log(convert(35427, ['ping|', 'pong|', 'tok|']));
 // Output: pong|tok|pong|ping|pong|tok|pong|ping|pong|ping|
+```
+
+## Implicit leading zero
+
+In our number world, `00001 === 1`, we don't think of the leading zeros. Same
+for hexadecimal : `000FF === FF`. But sometimes, you want those to be different
+and for instance, using the normal alphabet, after "Z", you want "AA", not "BA".
+
+You can pass an option to not use this behavior: `implicitLeadingZero` (default: 
+`true`).
+
+```js
+import convert, { ALPHABET_ASCII, ALPHABET_DECIMAL } from 'number-converter-alphabet';
+
+console.log(convert(26, ALPHABET_ASCII, { implicitLeadingZero: true }));
+// Output: ba
+console.log(convert(26, ALPHABET_ASCII, { implicitLeadingZero: false }));
+// Output: aa
+
+console.log(convert(26, ALPHABET_DECIMAL, { implicitLeadingZero: true }));
+// Output: 26
+console.log(convert(6, ALPHABET_DECIMAL, { implicitLeadingZero: false }));
+// Output: 6
+console.log(convert(16, ALPHABET_DECIMAL, { implicitLeadingZero: false }));
+// Output: 06
+console.log(convert(26, ALPHABET_DECIMAL, { implicitLeadingZero: false }));
+// Output: 16 (because )
 ```
 

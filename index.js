@@ -1,5 +1,7 @@
 export const ALPHABET_BINARY = '01';
+export const ALPHABET_DECIMAL = '0123456789';
 export const ALPHABET_HEXADECIMAL = '0123456789ABCDEF';
+export const ALPHABET_ASCII = 'abcdefghijklmnopqrstuvwxyz';
 
 export default function convert(value, alphabet, { implicitLeadingZero = true } = {}) {
   if (alphabet.length < 2) {
