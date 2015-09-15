@@ -60,9 +60,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports['default'] = convert;
 	var ALPHABET_BINARY = '01';
 	exports.ALPHABET_BINARY = ALPHABET_BINARY;
+	var ALPHABET_DECIMAL = '0123456789';
+	exports.ALPHABET_DECIMAL = ALPHABET_DECIMAL;
 	var ALPHABET_HEXADECIMAL = '0123456789ABCDEF';
-
 	exports.ALPHABET_HEXADECIMAL = ALPHABET_HEXADECIMAL;
+	var ALPHABET_ASCII = 'abcdefghijklmnopqrstuvwxyz';
+
+	exports.ALPHABET_ASCII = ALPHABET_ASCII;
 
 	function convert(value, alphabet) {
 	  var _ref = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];

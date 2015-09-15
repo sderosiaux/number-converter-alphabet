@@ -1,11 +1,11 @@
-# number-converter-alphabet
-> Convert a number to a representation in any base or in any custom alphabet.
+# number-converter-alphabet [![Build Status](https://travis-ci.org/chtefi/number-converter-alphabet.svg)](https://travis-ci.org/chtefi/number-converter-alphabet)
+> Convert a number to any base/any custom alphabet.
 
 ## Why
 
 When you need to convert a number to a custom base/alphabet, this comes in handy.
-For instance, for Excel style column names, you can count from 0 to n and
-get the representation of the number as a column name "AB", "CF" easily.
+For instance, for Excel style column names, you can count from `0` to `n` and
+get the representation of the number as a column name: "AZ" "BA" easily.
 
 ## Install
 
