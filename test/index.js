@@ -1,27 +1,38 @@
 import { expect } from 'chai';
 import convert, { ALPHABET_HEXADECIMAL, ALPHABET_BINARY, ALPHABET_ASCII, ALPHABET_DECIMAL } from '../index.js';
 
-describe('number-converter-alphabet', () => {
+describe('the converter', () => {
   it('should properly work with hexadecimal alphabet', () => {
     expect(convert(65535, ALPHABET_HEXADECIMAL)).to.be.equal('FFFF');
     expect(convert(3735928559, ALPHABET_HEXADECIMAL)).to.be.equal('DEADBEEF');
   });
 
   it('should properly work with binary alphabet', () => {
-    expect(convert(65535, ALPHABET_HEXADECIMAL)).to.be.equal('FFFF');
+    expect(convert(15, ALPHABET_BINARY)).to.be.equal('1111');
+    expect(convert(16, ALPHABET_BINARY)).to.be.equal('10000');
   });
 
   it('should properly work with ascii alphabet', () => {
-    expect(convert(65535, ALPHABET_HEXADECIMAL)).to.be.equal('FFFF');
+    expect(convert(25, ALPHABET_ASCII)).to.be.equal('z');
+    expect(convert(26, ALPHABET_ASCII)).to.be.equal('ba');
   });
 
   it('should properly work with decimal alphabet', () => {
-    expect(convert(65535, ALPHABET_HEXADECIMAL)).to.be.equal('FFFF');
+    expect(convert(0, ALPHABET_DECIMAL)).to.be.equal('0');
+    expect(convert(65535, ALPHABET_DECIMAL)).to.be.equal('65535');
+  });
+
+  it('should properly work with a custom alphabet', () => {
+    expect(convert(0, '9876543210')).to.be.equal('9');
+    expect(convert(65535, '9876543210')).to.be.equal('34464');
   });
 
   it('should properly work with multiple characters alphabets', () => {
     expect(convert(35427, ['ping|', 'pong|', 'tok|'])).to.be.equal(
       'pong|tok|pong|ping|pong|tok|pong|ping|pong|ping|'
+    );
+    expect(convert(5, ['hey', 'ho'])).to.be.equal(
+      'hoheyho'
     );
   });
 
@@ -47,5 +58,3 @@ describe('number-converter-alphabet', () => {
     expect(() => convert(1, '12')).to.not.throw(Error);
   });
 });
-
-

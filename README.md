@@ -59,3 +59,19 @@ console.log(convert(26, ALPHABET_DECIMAL, { implicitLeadingZero: false }));
 // Output: 16
 ```
 
+## Generator
+
+For commodity, there is a also a generator function that is available, to
+automatically increment the value it outputs :
+
+```js
+import generator from 'number-converter-alphabet';
+
+const gen = generator(ALPHABET_ASCII)
+gen(); // 'a'
+gen(); // 'b'
+
+const gen = generator(ALPHABET_ASCII, { start: 26 });
+gen(); // 'z'
+gen(); // 'aa'
+```

@@ -26,3 +26,8 @@ export default function convert(value, alphabet, { implicitLeadingZero = true } 
 
   return sign + convert(dividend, alphabet) + alphabet[rest];
 }
+
+export function generator(alphabet, { start = 0 } = {}) {
+  let i = start;
+  return () => convert(i++, alphabet, { implicitLeadingZero: false });
+}
