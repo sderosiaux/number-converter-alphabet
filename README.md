@@ -31,11 +31,14 @@ console.log(convert(35427, ['ping|', 'pong|', 'tok|']));
 
 ## Implicit leading zero
 
-In our number world, `00001 === 1`, we don't think of the leading zeros. Same
-for hexadecimal : `000FF === FF`. But sometimes, you want those to be different
-and for instance, using the normal alphabet, after "Z", you want "AA", not "BA".
+In our number world, `...00001 === 1`, we don't think of the leading zeros.
+Same for hexadecimal : `...000FF === FF`.
 
-You can pass an option to not use this behavior: `implicitLeadingZero` (default: 
+But sometimes, you want those to be different.
+For instance, in Excel, the column name are using the normal alphabet, and after
+ "Z", there is "AA", not "BA".
+
+You can pass an option to control this behavior: `implicitLeadingZero` (default: 
 `true`).
 
 ```js
