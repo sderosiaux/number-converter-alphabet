@@ -53,6 +53,6 @@ console.log(convert(6, ALPHABET_DECIMAL, { implicitLeadingZero: false }));
 console.log(convert(16, ALPHABET_DECIMAL, { implicitLeadingZero: false }));
 // Output: 06
 console.log(convert(26, ALPHABET_DECIMAL, { implicitLeadingZero: false }));
-// Output: 16 (because )
+// Output: 16
 ```
 
