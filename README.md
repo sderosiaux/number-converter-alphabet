@@ -61,7 +61,7 @@ console.log(convert(26, ALPHABET_DECIMAL, { implicitLeadingZero: false }));
 
 ## Generator
 
-For commodity, there is a also a generator function that is available, to
+For convenience, there is a also a generator function that is available, to
 automatically increment the value it outputs :
 
 ```js
